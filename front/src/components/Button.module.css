@@ -1,0 +1,30 @@
+.root {
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  border-color: var(--dark-border-color);
+  border-style: solid;
+}
+
+.root:focus-visible {
+  box-shadow: 0 0 6px var(--dark-border-color);
+}
+
+.small {
+  min-width: 90px;
+  font-size: 12px;
+}
+
+.medium {
+  min-width: 120px;
+  font-size: 16px;
+}
+
+.primary {
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+}
+
+.secondary {
+  background-color: var(--secondary-color);
+  color: var(--dark-text-color);
+}

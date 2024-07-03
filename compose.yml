@@ -1,0 +1,48 @@
+services:
+  db:
+    image: mysql:8.0.30
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
+    ports:
+      - "${MYSQL_PORT:-3303}:3306"
+    volumes:
+      - type: volume
+        source: mysql
+        target: /var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    environment:
+      APP_PORT: ${APP_PORT:-3003}
+      VITE_RUBY_ROOT: /app/front
+    ports:
+      - "${APP_PORT:-3003}:${APP_PORT:-3003}"
+      - "${VITE_PORT:-3036}:3036"
+    volumes:
+      - .:/app
+      - bundle:/usr/local/bundle
+    command: bash -c "rm -f tmp/pids/server.pid && yarn --cwd front install && bundle install && /app/db-migrate.sh && ./bin/dev"
+    stdin_open: true
+    tty: true
+    depends_on:
+      db:
+        condition: service_healthy
+  minio:
+    image: minio/minio:latest
+    environment:
+      MINIO_ROOT_USER: ak_eight
+      MINIO_ROOT_PASSWORD: sk_eight
+    ports:
+      - "${MINIO_CONSOLE_PORT:-9003}:9001"
+    command: server /data --console-address :9001
+volumes:
+  mysql:
+  bundle:

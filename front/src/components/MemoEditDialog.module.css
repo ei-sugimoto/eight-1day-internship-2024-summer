@@ -1,0 +1,54 @@
+.dialog {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 0;
+  inset: 0;
+  margin: auto;
+}
+
+.dialogContent {
+  background-color: var(--paper-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  border-radius: var(--border-radius);
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  padding: 1.5rem;
+  width: min(600px, calc(100vw - 2rem));
+  max-height: 400px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1.5rem;
+}
+
+.editorBlock {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  word-break: break-all;
+}
+
+.memoEditor {
+  background-color: var(--placeholder-color);
+  resize: none;
+  padding: 1rem;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 0.5rem;
+}
+
+.error {
+  color: var(--error-text-color);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.buttonArea {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}

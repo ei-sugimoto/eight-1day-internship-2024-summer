@@ -1,0 +1,18 @@
+.root {
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+}
+
+.list {
+  width: 100%;
+}
+
+.itemContainer:first-child {
+  border-top: 1px solid var(--light-border-color);
+  border-bottom: 1px solid var(--light-border-color);
+}
+
+.itemContainer + .itemContainer {
+  border-bottom: 1px solid var(--light-border-color);
+}

@@ -1,0 +1,18 @@
+.root {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+.container {
+  overflow-y: auto;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.mainContainer {
+  display: grid;
+  width: min(780px, 100vw);
+  background-color: var(--paper-color);
+  margin-inline: auto;
+}

@@ -1,0 +1,28 @@
+/* front/src/variables.css と合わせる */
+
+:root {
+  /* color */
+  --black-color: #000000;
+  --dark-gray-color: #333333;
+  --gray-color: #cccccc;
+  --light-gray-color: #ebebeb;
+  --white-color: #ffffff;
+  --blue-color: #0054ff;
+  --red-color: #ff0000;
+
+  --primary-color: var(--blue-color);
+  --secondary-color: var(--white-color);
+  --background-color: var(--light-gray-color);
+  --header-color: var(--blue-color);
+  --footer-color: var(--dark-gray-color);
+  --placeholder-color: var(--light-gray-color);
+  --dark-text-color: var(--dark-gray-color);
+  --light-text-color: var(--white-color);
+  --paper-color: var(--white-color);
+  --error-text-color: var(--red-color);
+  --light-border-color: var(--gray-color);
+  --dark-border-color: var(--dark-gray-color);
+
+  /* border */
+  --border-radius: 0.3rem;
+}

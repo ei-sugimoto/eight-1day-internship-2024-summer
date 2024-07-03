@@ -1,0 +1,15 @@
+shared:
+  credentials:
+    endpoint: 'http://minio:9000'
+    region: 'us-east-1'
+    access_key_id: 'ak_eight'
+    secret_access_key: 'sk_eight'
+    force_path_style: true
+  buckets:
+    cards: cards
+    card_uploads: card-uploads
+
+test:
+  buckets:
+    cards: cards-test
+    card_uploads: card-uploads-test

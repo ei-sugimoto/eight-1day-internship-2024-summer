@@ -1,0 +1,31 @@
+@import './variables';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+input, textarea {
+  border-width: 1px;
+  border-style: solid;
+}
