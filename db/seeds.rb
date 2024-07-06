@@ -35,4 +35,15 @@ ActiveRecord::Base.transaction do
       memo.save!
     end
   end
+
+  add_card = Card.new(
+    person_id: 19,
+    name: '矢島 秀司',
+    email: 'yazima2006@example.com',
+    organization: '株式会社ピーマン',
+    department: '広報部',
+    title: '広報',
+  )
+  add_card.save!
+  SampleCardImageUploader.upload(add_card)
 end

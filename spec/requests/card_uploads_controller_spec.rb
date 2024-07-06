@@ -17,7 +17,7 @@ describe CardUploadsController, type: :request do
       Aws::S3::Resource.new(Rails.configuration.s3.credentials).bucket(Rails.configuration.s3.buckets[:card_uploads])
     end
 
-    before { card_uploads_bucket.clear! }
+    before { card_uploads_bucket.clear! if card_uploads_bucket.exists? }
 
     include_context 'db_card'
 

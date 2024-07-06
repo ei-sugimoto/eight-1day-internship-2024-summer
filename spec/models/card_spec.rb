@@ -101,7 +101,7 @@ describe Card do
         Aws::S3::Resource.new(Rails.configuration.s3.credentials).bucket(Rails.configuration.s3.buckets[:cards])
       end
 
-      before { cards_bucket.clear! }
+      before { cards_bucket.clear! if cards_bucket.exists? }
 
       it '新しい Person が作られること' do
         expect { subject }.to change(Person, :count).from(20).to(21)

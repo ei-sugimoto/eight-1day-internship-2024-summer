@@ -21,9 +21,9 @@ export const CardListItem: FC<{
       <div className={styles.cardArea}>
         <div className={styles.cardInfo}>
           <p className={styles.nameAndOrg}>
-            <span className={styles.name}>{person.cards[0].name}</span>
+            <span className={styles.name}>{person.cards[person.cards.length - 1].name}</span>
             <span className={styles.organization}>
-              {person.cards[0].organization}
+              {person.cards[person.cards.length - 1].organization}
             </span>
           </p>
           <div className={styles.memoArea}>

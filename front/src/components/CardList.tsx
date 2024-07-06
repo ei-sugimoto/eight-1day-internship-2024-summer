@@ -14,7 +14,7 @@ export const CardList: FC<{
     <section className={styles.root}>
       <ul className={styles.list}>
         {people.map((person) => (
-          <li key={person.cards[0].id} className={styles.itemContainer}>
+          <li key={person.cards[person.cards.length - 1].id} className={styles.itemContainer}>
             <CardListItem person={person} onEditMemo={onEditMemo} />
           </li>
         ))}

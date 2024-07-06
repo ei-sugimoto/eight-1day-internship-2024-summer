@@ -1,0 +1,8 @@
+<div style="margin: 30px">
+  <h2 style="margin-bottom: 10px">CSVアップロード</h2>
+
+  <%= form_with(url: card_uploads_path) do |f| %>
+    <%= f.file_field :card_csv, accept: '.csv', style: "border: initial" %>
+    <%= f.submit 'Upload', style: "padding: 3px;" %>
+  <% end %>
+</div>
